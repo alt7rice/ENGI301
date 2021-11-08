@@ -29,6 +29,15 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+This code uses components that were worked on in conjuction with the ENGI 301 
+Professor Erik Welsh. Some parts of the code stem directly from the code 
+developed in the class.
+
+This code is calculating "walking" using the method developed by Ashish 
+Choudhary in when they  delveloped a way to "Build a Portable Step Counter 
+using ATtiny85 and MPU6050".
+
 --------------------------------------------------------------------------
 
 
@@ -74,6 +83,7 @@ import adafruit_mpu6050
 import digitalio
 import adafruit_character_lcd.character_lcd as characterlcd
 
+#To calculate acceleration for walking
 import cmath
 
 
@@ -132,6 +142,7 @@ try:
                 temperature = mpu.temperature
                 #lcd.clear()
                 prev_walking = walking
+                #This calculation for walking is from Ashish Choudhary
                 walking = cmath.sqrt((acc_x*acc_x)+(acc_y*acc_y)+(acc_z*acc_z))
                 walking = abs(walking)
                 
@@ -143,16 +154,17 @@ try:
                     lcd.message = "                \n     Sitting       "
                     #lcd.clear()
                     seconds = seconds + 1
-                    if seconds >= 10:
+                    if seconds >= 3600: 
+                      #Tells person to stand on LCD screen and starts buzzing after one hour of sitting
                         lcd.message = "   You need   \n   to stand!!!   "
                         music.zelda_secret()
                     time.sleep(0.9)
             
-                elif (acc_y > (9)):
+                elif (acc_y > (8.5)):
                     lcd.message = "                \n    Standing       "
                     seconds = 0
                     #lcd.clear()
-            
+                
                 elif (abs(walking - prev_walking) > 6):
                     lcd.message = "                \n     Walking       "
                     seconds = 0
@@ -182,20 +194,3 @@ except KeyboardInterrupt:
     music.stop()
     lcd.clear()
     
-    
-""" 
-
-Now inside the loop function, first read the X, Y, and Z-axis values and 
-after getting the 3-axis values, calculate the total acceleration vector by taking the square 
-root of X, Y, and Z-axis values. Then calculate the difference between the current vector and 
-the previous vector and if the difference is greater than 6, then increase the step count.
-
-https://circuitdigest.com/microcontroller-proejcts/build-a-portable-step-counter-using-attiny85-and-mpu6050
-"""
-
-"""
-6 axis sensor fusion and euler angles to do orientations things for position
-
-Dr. Fregley in the mech department to talk about euler angles
-Dr. o'Malley
-"""
