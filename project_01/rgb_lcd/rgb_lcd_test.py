@@ -1,7 +1,55 @@
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
-# SPDX-License-Identifier: MIT
+"""
+--------------------------------------------------------------------------
+RGB LCD Test
+--------------------------------------------------------------------------
+License:   
 
-"""Simple test for monochromatic character LCD on Raspberry Pi"""
+Copyright 2021 Angelica Torres
+
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this 
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the documentation 
+and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors 
+may be used to endorse or promote products derived from this software without 
+specific prior written permission.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+This code was downloaded from the adafruit library for the LCD and edited.
+Their licensing information is :
+  - SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
+  - SPDX-License-Identifier: MIT
+--------------------------------------------------------------------------
+Use the following hardware components:  
+  - RGB backlight positive LCD 16x2  
+Requirements:
+  - Display messages on screen
+Uses:
+  - adafruit_character_lcd.character_lcd developed for LCD
+  - time
+  - board
+  - digitalio
+"""
+
+"""Simple test for monochromatic character LCD on PocketBeagle"""
 import time
 import board
 import digitalio
@@ -25,8 +73,7 @@ lcd = characterlcd.Character_LCD_Mono(
     lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, lcd_columns, lcd_rows
 )
 
-# Turn backlight on
-# lcd.backlight = True
+
 # Print a two line message
 lcd.message = "Hello\nCircuitPython"
 # Wait 5s
@@ -63,5 +110,4 @@ for i in range(len(scroll_msg)):
     lcd.move_left()
 lcd.clear()
 lcd.message = "Going to sleep\nCya later!"
-# Turn backlight off
 time.sleep(2)
