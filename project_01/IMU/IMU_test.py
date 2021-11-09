@@ -33,7 +33,8 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-This code was downloaded from the adafruit library for the MPU6050.
+This code was edited from the adafruit library for the MPU6050.
+https://circuitpython.readthedocs.io/projects/mpu6050/en/latest/api.html#implementation-notes
 --------------------------------------------------------------------------
 Use the following hardware components:  
   - MPU-6050 MPU6050 3 Axis Accelerometer Gyroscope 
