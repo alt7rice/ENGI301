@@ -34,6 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 This code was downloaded from the adafruit library for the LCD and edited.
+https://learn.adafruit.com/character-lcds/python-circuitpython
 Their licensing information is :
   - SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
   - SPDX-License-Identifier: MIT
