@@ -36,7 +36,8 @@ developed in the class.
 
 This code is calculating "walking" using the method developed by Ashish 
 Choudhary in when they  delveloped a way to "Build a Portable Step Counter 
-using ATtiny85 and MPU6050".
+using ATtiny85 and MPU6050". 
+https://circuitdigest.com/microcontroller-proejcts/build-a-portable-step-counter-using-attiny85-and-mpu6050
 
 --------------------------------------------------------------------------
 
