@@ -33,33 +33,16 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-This code was downloaded from the adafruit library
+This code was downloaded from the adafruit library for the MPU6050.
 --------------------------------------------------------------------------
-Use the following hardware components to make a body position sensor:  
-  - Adafruit RGB backlight positive LCD 16x2 Display
-  - Button
-  - Potentiometer
+Use the following hardware components:  
   - MPU-6050 MPU6050 3 Axis Accelerometer Gyroscope 
-  - Mini Vibration Motor
 Requirements:
-  - Hardware:
-    - When sitting:   Display shows "Sitting"
-        -If sitting for over an hour the Display will show "You need to stand!!"
-        and the mini vibration motor will turn on 
-    - When standing:  Display will show "Standing"
-    - When standing:  Display will show "Walking"
-    - Button: Starts and Stops the collection of body position data
-    - User interaction:
-        - Needs to change display in a way that aligns with user's position and 
-        notify the user to stand.
-        - Needs to start and stop when the user presses on and off button
+  - Detect acceleration and gyroscope data
 Uses:
-  - buzzer_music  library developed in class
   - adafruit_mpu6050 developed for accelerometer
-  - adafruit_character_lcd for LCD screen
-  - Adafruit_BBIO for PWM
   - time
-  - cmath
+  - board
 """
 
 import time
