@@ -6,7 +6,7 @@ This repository has code to make an LED blink.
 
 This repository also includes the code to run a device that can alert a user that the have been sitting for too long (Project_01).
 
-This repository includes a possible PCB design for the device designed in Porject_01 (Project_02).    
+This repository includes a possible PCB design for the device designed in Project_01 (Project_02) further description is at the bottom of this Readme.    
       
       Below is the Story for this device.
 During this pandemic, we have all been sitting at home and not getting the exercise that we need. Doctors recommend that we stand for at least 4 hours a day. This device was created to be able to detect your body position to alert you when you need to stand. This device could be useful when working from home or in the office to act as a friendly reminder and combat a sedentary lifestyle.
@@ -41,3 +41,7 @@ Setting up the hardware:
 12. Connect the other pin of the button to ground.
 
 After the hardware is set up, then the BodyPosition.py file can be run and the device can be used. On Cloud 9, the device was made to run when it is connected to power using the cron functionality. 
+
+
+      PCB Design
+This PCB was designed to mimic the breadboard of the initial construction. Amendments were made to have more than one mini vibration motor so that the vibration could be more intense when alerting the user when to stand. The mini motors are also at the back of the PCB board so it is against the leg of the user when it is strapped on. Additionally, the IMU is put in the middle of the board so that it can better detect the changes in body position. Other minor connection changes were also made so that there was easier formation of traces on the PCB, but none require pin recofigurations.
