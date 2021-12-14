@@ -4,8 +4,10 @@ Repository for ENGI301 coursework
 This repository now includes a simple calculator code and a way to turn on the USR3 LED on the pocketbeagle.
 This repository has code to make an LED blink.
 
-This repository also includes the code to run a device that can alert a user that the have been sitting for too long.
-  Below is the Story for this device.
+This repository also includes the code to run a device that can alert a user that the have been sitting for too long (Project_01).
+This repository includes a possible PCB design for the device designed in Porject_01 (Project_02).    
+      
+      Below is the Story for this device.
 During this pandemic, we have all been sitting at home and not getting the exercise that we need. Doctors recommend that we stand for at least 4 hours a day. This device was created to be able to detect your body position to alert you when you need to stand. This device could be useful when working from home or in the office to act as a friendly reminder and combat a sedentary lifestyle.
 
 Using an accelerometer/gyroscope (MPU-6050) and python, the body position was determined. Since the device is attached to the leg using velcro straps, the acceleration due to gravity can be used to differentiate between sitting and standing. When gravity is in the z-direction, the user is sitting and when gravity is in the y-direction, the user is standing.  To determine when the user is walking, the magnitude of the acceleration in the x, y, and z-directions had to be above 6 m/s^2. This calculation was based on the project by Ashish Choudhary where they create a Portable Step Counter using ATtiny85 and MPU6050. When The position was shown on an LCD screen (Adafruit RGB backlight positive LCD 16x2). If the user has been sitting for longer than an hour, the LCD screen will display the message, "You need to stand!!!" In addition to the message, a mini vibration motor will vibrate repeatedly until the user stands. As soon as the user stands, the motor stops and the message changes to, "Standing". The clock will begin again to count down the hour once the user sits again. The device is powered using a mini portable phone charger, and the microcontroller that regulates this system is a PocketBeagle. 
