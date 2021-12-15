@@ -42,6 +42,9 @@ Setting up the hardware:
 
 After the hardware is set up, then the BodyPosition.py file can be run and the device can be used. On Cloud 9, the device was made to run when it is connected to power using the cron functionality. 
 
+Here is a link to the hackster page for this project:
+https://www.hackster.io/431666/body-position-sensing-with-an-accelerometer-gyroscope-5139e5
+
 
       PCB Design
 This PCB was designed to mimic the breadboard of the initial construction. Amendments were made to have more than one mini vibration motor so that the vibration could be more intense when alerting the user when to stand. The mini motors are also at the back of the PCB board so it is against the leg of the user when it is strapped on. Additionally, the IMU is put in the middle of the board so that it can better detect the changes in body position. Other minor connection changes were also made so that there was easier formation of traces on the PCB, but none require pin recofigurations.
